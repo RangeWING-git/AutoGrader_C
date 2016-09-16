@@ -1,6 +1,9 @@
 package kr.co.flywing.app;
 
+import com.sun.media.jfxmedia.logging.Logger;
+
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.LinkedList;
 
 /**
@@ -9,14 +12,15 @@ import java.util.LinkedList;
 public class CGrader {
     static final String linuxcmd_compile = "gcc \"%s\" -o \"%s\"";
     static final String linuxcmd_run = "\"%s\" < \"%s\"";
-    static final String wincmd_compile = "cl \"%s\" /Fe \"%s\"";
-    static final String wincmd_preset = "\"%s\"\\vcvars32.exe";
+    static final String wincmd_compile = "\"" + Constant.VC_PATH + "\\cl.exe\" \"%s\" /Fe\"%s\" /Fo\"%s\"";
+    static final String wincmd_preset = "\"" + Constant.VC_PATH + "\\vcvars32.bat\"";
     static final String wincmd_run = "\"%s\" < \"%s\"";
 
     private TestCase[] testCases;
     private File[] testCaseFiles;
 
     public TestCase[] loadTestCases(File testPath) throws IOException{
+        System.out.println("Load testcases from " + testPath.getAbsolutePath());
         LinkedList<TestCase> list = new LinkedList<>();
         File[] tests = testPath.listFiles();
         if(tests == null) return null;
@@ -27,7 +31,8 @@ public class CGrader {
             StringBuilder sb = new StringBuilder();
             while((c = reader.read()) != -1){
                 if(c == '\n'){
-                    list.add(new TestCase(sb.toString()));
+                    TestCase tc = createTestCase(sb.toString());
+                    if(tc != null) list.add(tc);
                     sb = new StringBuilder();
                 }else sb.append(c);
             }
@@ -39,9 +44,11 @@ public class CGrader {
 
         int i = 0;
         for(TestCase testCase : list){
+            if(testCase.input == null) continue;
             File f = File.createTempFile("testcase", Integer.toString(i), testPath);
             FileWriter writer = new FileWriter(f);
             writer.write(testCase.input);
+            System.out.println("testcase " + testCase.input);
             writer.close();
             testCaseFiles[i++] = f;
         }
@@ -53,18 +60,25 @@ public class CGrader {
         String fmt = Constant.COMPILER == Constant.GCC ? linuxcmd_compile : wincmd_compile;
         String fileName = file.getName();
         File execFile = new File(execPath, fileName.substring(0, fileName.lastIndexOf('.')));
-        String cmd = String.format(fmt, file.getAbsolutePath(), execFile.getAbsolutePath());
+        String cmd = String.format(fmt, file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
+        //System.out.println(cmd);
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor();
         InputStream is = proc.getInputStream();
         StringBuilder sb = new StringBuilder();
         byte[] buf = new byte[256];
-        int c = 0;
-        while((c = is.read(buf)) != -1){
-            sb.append(c);
+        int n = 0;
+        while((n = is.read(buf)) != -1){
+            String str = new String(buf, Charset.forName("CP949"));
+            sb.append(str);
         }
         is.close();
+        System.out.println("Compile Done: " + execFile.getAbsolutePath());
         return sb.toString();
+    }
+
+    public void eval(File file) throws Exception{
+        eval(file, Constant.COMPILER);
     }
 
     public void eval(File file, int compiler) throws Exception{
@@ -88,9 +102,9 @@ public class CGrader {
         InputStream is = proc.getInputStream();
         StringBuilder sb = new StringBuilder();
         byte[] buf = new byte[256];
-        int c = 0;
-        while((c = is.read(buf)) != -1){
-            sb.append(c);
+        int n = 0;
+        while((n = is.read(buf)) != -1){
+            sb.append(new String(buf, Charset.defaultCharset()));
         }
         is.close();
         return sb.toString();
@@ -102,18 +116,23 @@ public class CGrader {
     }
 
     public void preset_win() throws Exception{
+        System.out.println(wincmd_preset);
         Process proc = Runtime.getRuntime().exec(wincmd_preset);
         proc.waitFor();
     }
 
+    public static TestCase createTestCase(String line){
+        int sep = line.indexOf('#');
+        if(sep < 0) return null;
+        TestCase testCase = new TestCase();
+        testCase.input = line.substring(0, sep).trim();
+        testCase.output = line.substring(sep+1).trim().split(" ");
+        return testCase;
+    }
 
-    public class TestCase {
+
+    public static class TestCase {
         public String input;
         public String[] output;
-        public TestCase(String line){
-            int sep = line.indexOf('#');
-            input = line.substring(0, sep).trim();
-            output = line.substring(sep+1).trim().split(" ");
-        }
     }
 }
