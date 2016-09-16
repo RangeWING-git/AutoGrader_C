@@ -5,7 +5,6 @@ import rcc.h2tlib.parser.HWPMeta;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Date;
 
 /**
  * Created by RangeWING on 2016-09-14.
