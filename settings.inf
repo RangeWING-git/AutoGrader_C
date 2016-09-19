@@ -1,0 +1,13 @@
+# AutoGrader Setting File (G9190)
+# Author: RangeWING
+
+# [Path Settings]
+# Paths should NOT end with /. Use / as the separator, instead of \ in Windows.
+# if your compiler is gcc and os is linux, then do not write PATH_VC\
+
+PATH_INPUT = ./file/input
+PATH_OUTPUT = ./file/output
+PATH_EXECUTABLE = ./file/exec
+PATH_TESTCASE = ./file/testcase
+PATH_VC = C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC
+ROOT_DIR = C:/Users/range/IdeaProjects/AutoGrader

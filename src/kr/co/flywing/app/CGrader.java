@@ -12,15 +12,23 @@ import java.util.LinkedList;
 public class CGrader {
     static final String linuxcmd_compile = "gcc \"%s\" -o \"%s\"";
     static final String linuxcmd_run = "\"%s\" < \"%s\"";
-    static final String wincmd_compile = "\"" + Constant.VC_PATH + "\\cl.exe\" \"%s\" /Fe\"%s\" /Fo\"%s\"";
-    static final String wincmd_preset = "\"" + Constant.VC_PATH + "\\vcvars32.bat\"";
+
+    static final String wincmd_compile = "\"%s/bin/cl.exe\" \"%s\" /Fo\"%s\" /Fe\"%s\"";
+    static final String wincmd_preset = "\"%s/vcvarsall.bat\"";
     static final String wincmd_run = "\"%s\" < \"%s\"";
 
     private TestCase[] testCases;
     private File[] testCaseFiles;
 
     public TestCase[] loadTestCases(File testPath) throws IOException{
-        System.out.println("Load testcases from " + testPath.getAbsolutePath());
+        System.out.print("Load testcases from " + testPath.getAbsolutePath());
+        File tmpPath = new File(testPath, "tmp");
+        if(tmpPath.exists()) {
+            File[] tmps = tmpPath.listFiles();
+            for(File tmp : tmps) tmp.delete();
+            tmpPath.delete();
+        }
+
         LinkedList<TestCase> list = new LinkedList<>();
         File[] tests = testPath.listFiles();
         if(tests == null) return null;
@@ -29,23 +37,27 @@ public class CGrader {
             reader = new FileReader(tf);
             int c;
             StringBuilder sb = new StringBuilder();
-            while((c = reader.read()) != -1){
-                if(c == '\n'){
+            do{
+                c = reader.read();
+                if(c == '\n' || c == -1){
                     TestCase tc = createTestCase(sb.toString());
                     if(tc != null) list.add(tc);
                     sb = new StringBuilder();
-                }else sb.append(c);
-            }
+                }else sb.append((char)c);
+            }while(c != -1);
             reader.close();
         }
         testCases = new TestCase[list.size()];
         list.toArray(testCases);
         testCaseFiles = new File[list.size()];
 
+        tmpPath.mkdir();
+
         int i = 0;
         for(TestCase testCase : list){
             if(testCase.input == null) continue;
-            File f = File.createTempFile("testcase", Integer.toString(i), testPath);
+            File f = File.createTempFile("testcase", Integer.toString(i), tmpPath);
+            f.deleteOnExit();
             FileWriter writer = new FileWriter(f);
             writer.write(testCase.input);
             System.out.println("testcase " + testCase.input);
@@ -53,15 +65,20 @@ public class CGrader {
             testCaseFiles[i++] = f;
         }
 
+        System.out.println("\t[Done] (" + testCaseFiles.length + " cases loaded)");
         return testCases;
     }
 
     public String compile(File file, File execPath) throws Exception{
-        String fmt = Constant.COMPILER == Constant.GCC ? linuxcmd_compile : wincmd_compile;
+        String cmd;
         String fileName = file.getName();
         File execFile = new File(execPath, fileName.substring(0, fileName.lastIndexOf('.')));
-        String cmd = String.format(fmt, file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
-        //System.out.println(cmd);
+        if(Constant.isEqual(Constant.COMPILER, Constant.COMPILER_GCC)){
+            cmd = String.format(linuxcmd_compile, file.getAbsolutePath(), execFile.getAbsolutePath());
+        }else{
+            cmd = String.format(wincmd_compile, Constant.get(Constant.PATH_VC), file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
+        }
+
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor();
         InputStream is = proc.getInputStream();
@@ -73,29 +90,25 @@ public class CGrader {
             sb.append(str);
         }
         is.close();
-        System.out.println("Compile Done: " + execFile.getAbsolutePath());
         return sb.toString();
     }
 
     public void eval(File file) throws Exception{
-        eval(file, Constant.COMPILER);
-    }
-
-    public void eval(File file, int compiler) throws Exception{
-        if(compiler == Constant.VC) preset_win();
         for(File tcf : testCaseFiles){
-            System.out.println(exec(file, tcf, compiler));
+            System.out.println("Eval: " + tcf.getAbsolutePath());
+            System.out.println(exec(file, tcf));
         }
     }
 
-    public String exec(File file, File testCaseFile, int compiler) throws Exception{
-        if(compiler == Constant.VC) return exec_win(file, testCaseFile);
+    public String exec(File file, File testCaseFile) throws Exception{
+        if(Constant.isEqual(Constant.COMPILER, Constant.COMPILER_VC)) return exec_win(file, testCaseFile);
         else return exec_linux(file ,testCaseFile);
     }
 
     //for windows
     public String exec_win(File file, File testCaseFile) throws Exception {
         String fmt = wincmd_run;
+        if(!FileHandler.getExtensionFromFileName(file.getName()).equals("exe")) return null;
         String cmd = String.format(fmt, file.getAbsolutePath(), testCaseFile.getAbsolutePath());
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor();
@@ -115,9 +128,11 @@ public class CGrader {
         return null;
     }
 
+    @Deprecated
     public void preset_win() throws Exception{
-        System.out.println(wincmd_preset);
-        Process proc = Runtime.getRuntime().exec(wincmd_preset);
+        String cmd = String.format(wincmd_preset, Constant.get(Constant.PATH_VC));
+        System.out.println(cmd);
+        Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor();
     }
 
