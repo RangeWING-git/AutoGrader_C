@@ -29,14 +29,19 @@ public class HWPHandler {
 
     public Document getDocument(File file) throws NotHWPFileException{
         String text = getText(file.getAbsolutePath());
-        Document doc = parse(text);
-        String fileName = file.getName();
-        doc.id = FileHandler.getIdFromFileName(fileName);
-        doc.name = FileHandler.getNameFromFileName(fileName);
+        Document doc = null;
+        try {
+            doc = parse(text);
+            String fileName = file.getName();
+            doc.id = FileHandler.getIdFromFileName(fileName);
+            doc.name = FileHandler.getNameFromFileName(fileName);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return doc;
     }
 
-    private Document parse(String text){
+    private Document parse(String text) throws IndexOutOfBoundsException{
         if(text == null) return null;
 
         Document doc = new Document();

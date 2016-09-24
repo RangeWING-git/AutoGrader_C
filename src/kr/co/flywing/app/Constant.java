@@ -11,8 +11,8 @@ import java.util.Set;
  * Created by RangeWING on 2016-09-14.
  */
 public class Constant {
-    public static final String VERSION = "Indev 0.4";
-    public static final String BUILD = "G9250";
+    public static final String VERSION = "Indev 0.4.1";
+    public static final String BUILD = "G9251";
 
     public static final String OS = "OS";
     public static final String OS_WIN = "win";
@@ -24,6 +24,7 @@ public class Constant {
     public static final String PATH_OUTPUT = "PATH_OUTPUT";
     public static final String PATH_TESTCASE = "PATH_TESTCASE";
     public static final String PATH_EXECUTABLE = "PATH_EXECUTABLE";
+    public static final String PATH_REPORT = "PATH_REPORT";
     public static final String PATH_VC = "PATH_VC";
     public static final String ROOT_DIR = "ROOT_DIR";
 

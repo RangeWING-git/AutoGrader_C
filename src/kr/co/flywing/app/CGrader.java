@@ -5,6 +5,7 @@ import com.sun.media.jfxmedia.logging.Logger;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by RangeWING on 2016-09-14.
@@ -18,22 +19,22 @@ public class CGrader {
     static final String wincmd_run = "\"%s\" < \"%s\"";
 
     private TestCase[] testCases;
-    private File[] testCaseFiles;
 
     public TestCase[] loadTestCases(File testPath) throws IOException{
         System.out.print("Load testcases from " + testPath.getAbsolutePath());
-        File tmpPath = new File(testPath, "tmp");
-        if(tmpPath.exists()) {
-            File[] tmps = tmpPath.listFiles();
-            for(File tmp : tmps) tmp.delete();
-            tmpPath.delete();
-        }
+//        File tmpPath = new File(testPath, "tmp");
+//        if(tmpPath.exists()) {
+//            File[] tmps = tmpPath.listFiles();
+//            for(File tmp : tmps) tmp.delete();
+//            tmpPath.delete();
+//        }
 
         LinkedList<TestCase> list = new LinkedList<>();
         File[] tests = testPath.listFiles();
         if(tests == null) return null;
         FileReader reader = null;
         for(File tf : tests){
+            if(tf.isDirectory()) continue;
             reader = new FileReader(tf);
             int c;
             StringBuilder sb = new StringBuilder();
@@ -49,23 +50,23 @@ public class CGrader {
         }
         testCases = new TestCase[list.size()];
         list.toArray(testCases);
-        testCaseFiles = new File[list.size()];
+        //testCaseFiles = new File[list.size()];
 
-        tmpPath.mkdir();
+        //tmpPath.mkdir();
+//
+//        int i = 0;
+//        for(TestCase testCase : list){
+//            if(testCase.input == null) continue;
+//            File f = File.createTempFile("testcase", Integer.toString(i), tmpPath);
+//            f.deleteOnExit();
+//            FileWriter writer = new FileWriter(f);
+//            writer.write(testCase.input);
+//            //System.out.println("testcase " + testCase.input);
+//            writer.close();
+//            testCaseFiles[i++] = f;
+//        }
 
-        int i = 0;
-        for(TestCase testCase : list){
-            if(testCase.input == null) continue;
-            File f = File.createTempFile("testcase", Integer.toString(i), tmpPath);
-            f.deleteOnExit();
-            FileWriter writer = new FileWriter(f);
-            writer.write(testCase.input);
-            //System.out.println("testcase " + testCase.input);
-            writer.close();
-            testCaseFiles[i++] = f;
-        }
-
-        System.out.println("\t[Done] (" + testCaseFiles.length + " cases loaded)");
+        System.out.println("\t[Done] (" + testCases.length + " cases loaded)");
         return testCases;
     }
 
@@ -79,8 +80,9 @@ public class CGrader {
             cmd = String.format(wincmd_compile, Constant.get(Constant.PATH_VC), file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
         }
 
+        long t = System.currentTimeMillis();
         Process proc = Runtime.getRuntime().exec(cmd);
-        proc.waitFor();
+        proc.waitFor(5000, TimeUnit.MICROSECONDS);
         InputStream is = proc.getInputStream();
         StringBuilder sb = new StringBuilder();
         byte[] buf = new byte[256];
@@ -93,12 +95,13 @@ public class CGrader {
         return sb.toString();
     }
 
-    public double eval(File file) throws Exception{
-        double score = 0;
+    public boolean[] eval(File file) throws Exception{
+        int k = 0;
+        boolean[] results = new boolean[testCases.length];
         for(TestCase tcf : testCases){
             System.out.println("Eval: " + tcf.input);
             String result = exec(file, tcf);
-            if(result == null) return -1;
+            if(result == null) return null;
             System.out.println(result);
             boolean right = true;
             String[] outputs = result.split("\n");
@@ -110,10 +113,10 @@ public class CGrader {
                     }
                 }
             }else right = false;
-            if(right) score++;
+            results[k++] = right;
             System.out.println(right);
         }
-        return score/testCases.length * 100.0;
+        return results;
     }
 
     public String exec(File file, TestCase testCase) throws Exception{
@@ -151,6 +154,18 @@ public class CGrader {
     public String exec_linux(File file, TestCase testCase) throws Exception {
         //TODO
         return null;
+    }
+
+    public static double calcScore(boolean[] scores){
+        if(scores == null) return -1;
+        boolean all = true;
+        double score = 0;
+        for(boolean s : scores){
+            if(s) score += 10;
+            else all = false;
+        }
+        if(all) score += 5;
+        return score;
     }
 
     @Deprecated

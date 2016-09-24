@@ -4,7 +4,6 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -45,6 +44,7 @@ public class FileHandler {
             if(!codeMap.containsKey(id) && ext.equals("hwp")){
                 try {
                     Document doc = hwpHandler.getDocument(file);
+                    if(doc == null) continue;
                     File code = new File(codePath, doc.id + ".c");
                     doc.replaceCodeAll();
                     writeFile(code.getAbsolutePath(), doc.code);
