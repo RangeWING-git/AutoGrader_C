@@ -40,7 +40,10 @@ public class Document {
     }
 
     public void replaceCodeAll(){
-        code = code.replaceAll("\r", "\n").replaceAll("／", "/").replaceAll("scanf_s", "scanf");
+        code = code.replaceAll("\r", "\n").replaceAll("／", "/").replaceAll("scanf_s", "scanf").replaceAll("system(\"pause\")", "").replaceAll("system(\"PAUSE\")", "");
+        int idx = code.lastIndexOf('}') +1;
+        code = code.substring(0, idx);
+        desc += "\n[AFTER_CODE]\n" + code.substring(idx) + "\n";
     }
 
     @Override

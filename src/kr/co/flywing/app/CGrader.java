@@ -80,7 +80,6 @@ public class CGrader {
             cmd = String.format(wincmd_compile, Constant.get(Constant.PATH_VC), file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
         }
 
-        long t = System.currentTimeMillis();
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor(5000, TimeUnit.MICROSECONDS);
         InputStream is = proc.getInputStream();
@@ -138,7 +137,8 @@ public class CGrader {
         os.write("\n".getBytes());
         os.flush();
         os.close();
-        //proc.waitFor();
+        proc.waitFor(5000, TimeUnit.MICROSECONDS);
+
         //TODO Thread: timeout
 
         StringBuilder sb = new StringBuilder();

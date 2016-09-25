@@ -73,6 +73,7 @@ public class Main {
                 String id = fileName.substring(0, fileName.lastIndexOf('.'));
                 docMap.get(id).scores = results;
                 if(results == null) System.out.println("NULL");
+                //TODO testcase 출력결과도 저장
             }
 
             docMap.forEach((s, doc) -> reportManager.write(doc));
