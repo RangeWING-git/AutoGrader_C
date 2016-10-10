@@ -2,18 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98377e4-8d8f-4eb0-87b6-9a9a2f0eb925" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/DarkLuna_김도현_kaist+1차+과제.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/barrydugger746_더걸유리_1번+더걸유리.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/cho0303_조석현_c언어+레벨+2+도전과제+1+조석현 (1).zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/dxkim08_김도현_C언어_레벨2_도전과제1_김도현.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/gmltjd1224_양희성_C언어+레벨2_도전과제1.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/ujkk369000_이현우_C언어%2B레벨2_도전과제1.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/wbc105_류진영_C언어%2B레벨2_도전과제1_류진영.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/barrydugger746_더걸유리.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/cho0303_조석현.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/dxkim08_김도현_C언어_레벨2_도전과제1_김도현.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/gmltjd1224_양희성_C언어+레벨2_도전과제1.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/ujkk369000_이현우_C언어%2B레벨2_도전과제1.hwp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/DarkLuna.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/barrydugger746.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/cho0303.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/dxkim08.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/gmltjd1224.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/ujkk369000.c" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/CGrader.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/CGrader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Constant.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Constant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Document.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Document.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/FileHandler.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/FileHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/HWPHandler$NotHWPFileException.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/HWPHandler$NotHWPFileException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/HWPHandler.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/HWPHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Main.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/DarkLuna.c" afterPath="$PROJECT_DIR$/file/output/DarkLuna.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/barrydugger746.c" afterPath="$PROJECT_DIR$/file/output/barrydugger746.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/cho0303.c" afterPath="$PROJECT_DIR$/file/output/cho0303.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/dxkim08.c" afterPath="$PROJECT_DIR$/file/output/dxkim08.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/gmltjd1224.c" afterPath="$PROJECT_DIR$/file/output/gmltjd1224.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/ujkk369000.c" afterPath="$PROJECT_DIR$/file/output/ujkk369000.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/output/wbc105.c" afterPath="$PROJECT_DIR$/file/output/wbc105.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/Document.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/Document.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java" />
     </list>
     <ignored path="AutoGrade.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,10 +62,8 @@
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,9 +72,11 @@
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+              <caret line="79" column="72" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5039#5040#0" expanded="true" />
+                <element signature="e#5073#5074#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Document.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="165" selection-start-line="42" selection-start-column="165" selection-end-line="42" selection-end-column="165" />
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.39033458">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <caret line="57" column="90" selection-start-line="57" selection-start-column="90" selection-end-line="57" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CGrader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CGrader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36460555">
-              <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,13 +167,13 @@
         <option value="$PROJECT_DIR$/src/kr/co/flywing/app/HWPParser.java" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/settings.inf" />
+        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" />
         <option value="$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java" />
-        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java" />
-        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java" />
-        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" />
         <option value="$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java" />
         <option value="$PROJECT_DIR$/src/kr/co/flywing/app/Document.java" />
-        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" />
+        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java" />
+        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" />
+        <option value="$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java" />
       </list>
     </option>
   </component>
@@ -191,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -240,12 +260,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -554,6 +576,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -625,7 +660,21 @@
       <workItem from="1474193288473" duration="184000" />
       <workItem from="1474255930918" duration="8514000" />
       <workItem from="1474361605986" duration="76000" />
-      <workItem from="1474698378345" duration="16693000" />
+      <workItem from="1474698378345" duration="16767000" />
+      <workItem from="1474803183917" duration="5108000" />
+      <workItem from="1474811274090" duration="4537000" />
+      <workItem from="1474948034946" duration="26000" />
+      <workItem from="1474948645068" duration="14000" />
+      <workItem from="1474949924602" duration="253000" />
+      <workItem from="1474950877649" duration="10000" />
+      <workItem from="1474977495677" duration="698000" />
+      <workItem from="1475138492160" duration="2630000" />
+      <workItem from="1475163663947" duration="604000" />
+      <workItem from="1475423129514" duration="100000" />
+      <workItem from="1475719780146" duration="2429000" />
+      <workItem from="1476023656539" duration="348000" />
+      <workItem from="1476035462814" duration="2673000" />
+      <workItem from="1476062617482" duration="7936000" />
     </task>
     <task id="LOCAL-00001" summary="pull">
       <created>1474029892258</created>
@@ -669,11 +718,17 @@
       <option name="project" value="LOCAL" />
       <updated>1474738295445</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="G9252 StrRep">
+      <created>1474770688151</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1474770688151</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49302000" />
+    <option name="totallyTimeSpent" value="76742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -689,19 +744,18 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32974428" sideWeight="0.4974293" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.48827294" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.49485862" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.48827294" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32974428" sideWeight="0.5025707" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42126516" sideWeight="0.52827764" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42126516" sideWeight="0.47429305" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.4974293" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.59892327" sideWeight="0.47172236" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13946016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08290488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -712,6 +766,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -733,7 +788,8 @@
     <MESSAGE value="G9191 Settings, testcase op ok" />
     <MESSAGE value="G9250 exec/eval ok" />
     <MESSAGE value="G9251 Excel Report" />
-    <option name="LAST_COMMIT_MESSAGE" value="G9251 Excel Report" />
+    <MESSAGE value="G9252 StrRep" />
+    <option name="LAST_COMMIT_MESSAGE" value="G9252 StrRep" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -748,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,9 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -806,17 +859,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -873,70 +981,8 @@
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,9 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,9 +1078,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="95" selection-start-line="8" selection-start-column="95" selection-end-line="8" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,9 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.051635113">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5202206">
           <caret line="170" column="32" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321859">
           <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,24 +1190,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321859">
           <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java">
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <caret line="57" column="90" selection-start-line="57" selection-start-column="90" selection-end-line="57" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1184,17 +1214,7 @@
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/HWPHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1204,27 +1224,39 @@
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="165" selection-start-line="42" selection-start-column="165" selection-end-line="42" selection-end-column="165" />
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/ReportManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+          <caret line="79" column="72" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5039#5040#0" expanded="true" />
+            <element signature="e#5073#5074#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/CGrader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36460555">
-          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39033458">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

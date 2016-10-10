@@ -131,8 +131,9 @@ public class FileHandler {
     }
     public boolean writeFile(String file, String content){
         try {
-            BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "cp949"));
+            BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
             //FileWriter fw = new FileWriter(file);
+            fw.write('\ufeff');
             fw.write(content);
             fw.close();
         } catch(Exception e){

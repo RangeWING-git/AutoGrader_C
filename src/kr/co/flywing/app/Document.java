@@ -1,7 +1,9 @@
 package kr.co.flywing.app;
 
+import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,6 +15,7 @@ public class Document {
     String code;
     String msg;
     boolean[] scores;
+    List<String> execOutput;
     boolean hasCode = false;
 
     public Document(){}
@@ -40,10 +43,13 @@ public class Document {
     }
 
     public void replaceCodeAll(){
-        code = code.replaceAll("\r", "\n").replaceAll("／", "/").replaceAll("scanf_s", "scanf").replaceAll("system(\"pause\")", "").replaceAll("system(\"PAUSE\")", "");
+        byte[] b = {(byte)0x82, (byte)0x6E};
+        String nl = new String(b, Charset.forName("UTF-8"));
+
+        code = code.replace('\r', '\n').replace('／', '/').replaceAll("scanf_s", "scanf").replace(nl, "\n").replaceAll("system(\"pause\");", " ").replaceAll("system(\"PAUSE\");", " ");
         int idx = code.lastIndexOf('}') +1;
-        code = code.substring(0, idx);
         desc += "\n[AFTER_CODE]\n" + code.substring(idx) + "\n";
+        code = code.substring(0, idx);
     }
 
     @Override

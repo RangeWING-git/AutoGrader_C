@@ -36,6 +36,7 @@ public class HWPHandler {
             doc.id = FileHandler.getIdFromFileName(fileName);
             doc.name = FileHandler.getNameFromFileName(fileName);
         }catch(Exception e){
+            System.err.println(file.getAbsolutePath());
             e.printStackTrace();
         }
         return doc;
@@ -54,7 +55,7 @@ public class HWPHandler {
         doc.id = null;
         doc.name = null;
         doc.desc = text.substring(idxd1+20, idx1);
-        doc.code = text.substring(Math.min(idx2, idx3));
+        doc.code = text.substring(idx2>0 ? (idx3>0 ? Math.min(idx2, idx3) : idx2) : idx3);
         return doc;
     }
 

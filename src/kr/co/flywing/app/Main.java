@@ -2,10 +2,7 @@ package kr.co.flywing.app;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by RangeWING on 2016-09-14.
@@ -23,7 +20,7 @@ public class Main {
         }
 
         Date date = new Date();
-        SimpleDateFormat df = new SimpleDateFormat("yyMMddhhmmss");
+        SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");
 
         File inputPath = Constant.getPathAsFile(Constant.PATH_INPUT);
         File outputPath = Constant.getPathAsFile(Constant.PATH_OUTPUT);
@@ -60,25 +57,35 @@ public class Main {
                 System.out.println(r);
 
                 String id = fileName.substring(0, fileName.lastIndexOf('.'));
-                docMap.get(id).msg = r;
+                if(docMap.get(id) != null)
+                    docMap.get(id).msg = r;
+                else
+                    System.err.println("cannot find info of " + id);
             }
 
             File[] execs = execPath.listFiles();
+            List<String> outputList = new ArrayList<>();
             for(File exec : execs){
                 String fileName = exec.getName();
                 if(!FileHandler.getExtensionFromFileName(fileName).equals("exe")) continue;
 
                 System.out.println(exec.getAbsolutePath());
-                boolean[] results = grader.eval(exec);
+                boolean[] results = grader.eval(exec, outputList);
                 String id = fileName.substring(0, fileName.lastIndexOf('.'));
-                docMap.get(id).scores = results;
+                if(docMap.get(id) != null) {
+                    docMap.get(id).scores = results;
+                    docMap.get(id).execOutput = outputList;
+                }else{
+                    System.err.println("cannot find info of " + id);
+                }
                 if(results == null) System.out.println("NULL");
-                //TODO testcase 출력결과도 저장
+                outputList = new ArrayList<>();
             }
 
             docMap.forEach((s, doc) -> reportManager.write(doc));
-
+            if(!report.createNewFile()) System.out.println("Failed to create report");
             reportManager.writeToFile(report);
+            System.out.println("Report Created");
         }catch(Exception e){
             e.printStackTrace();
         }

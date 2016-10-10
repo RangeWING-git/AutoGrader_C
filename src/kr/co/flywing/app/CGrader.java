@@ -1,10 +1,9 @@
 package kr.co.flywing.app;
 
-import com.sun.media.jfxmedia.logging.Logger;
-
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -83,10 +82,16 @@ public class CGrader {
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor(5000, TimeUnit.MICROSECONDS);
         InputStream is = proc.getInputStream();
+        InputStream es = proc.getErrorStream();
         StringBuilder sb = new StringBuilder();
         byte[] buf = new byte[256];
         int n = 0;
         while((n = is.read(buf)) != -1){
+            String str = new String(buf, Charset.forName("CP949"));
+            sb.append(str);
+        }
+        sb.append("\n");
+        while((n = es.read(buf)) != -1){
             String str = new String(buf, Charset.forName("CP949"));
             sb.append(str);
         }
@@ -95,6 +100,9 @@ public class CGrader {
     }
 
     public boolean[] eval(File file) throws Exception{
+        return eval(file, null);
+    }
+    public boolean[] eval(File file, List<String> outputList) throws Exception{
         int k = 0;
         boolean[] results = new boolean[testCases.length];
         for(TestCase tcf : testCases){
@@ -102,11 +110,12 @@ public class CGrader {
             String result = exec(file, tcf);
             if(result == null) return null;
             System.out.println(result);
+            if(outputList != null) outputList.add(result);
             boolean right = true;
             String[] outputs = result.split("\n");
             if (outputs.length == tcf.output.length){
                 for(int i=0; i<outputs.length; i++){
-                    if(!outputs[i].equals(tcf.output[i])) {
+                    if(!outputs[i].trim().equals(tcf.output[i])) {
                         right = false;
                         break;
                     }
@@ -132,12 +141,13 @@ public class CGrader {
         Process proc = Runtime.getRuntime().exec(cmd);
 
         InputStream is = proc.getInputStream();
+        InputStream es = proc.getErrorStream();
         OutputStream os = proc.getOutputStream();
         os.write(testCase.input.getBytes());
-        os.write("\n".getBytes());
+        os.write("\n\u0004\u0000".getBytes());
         os.flush();
         os.close();
-        proc.waitFor(5000, TimeUnit.MICROSECONDS);
+        proc.waitFor(1000, TimeUnit.MICROSECONDS);
 
         //TODO Thread: timeout
 
@@ -145,7 +155,11 @@ public class CGrader {
         byte[] buf = new byte[256];
         int n = 0;
         while((n = is.read(buf)) != -1){
-            sb.append(new String(buf, Charset.defaultCharset()));
+            sb.append(new String(buf, Charset.forName("EUC-KR")));
+        }
+        sb.append("\n");
+        while((n = es.read(buf)) != -1){
+            sb.append(new String(buf, Charset.forName("EUC-KR")));
         }
         is.close();
         return sb.toString().replaceAll("�n", "\n").trim();
