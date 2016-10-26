@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98377e4-8d8f-4eb0-87b6-9a9a2f0eb925" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/AutoGrader.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/DarkLuna_김도현_kaist+1차+과제.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/barrydugger746_더걸유리_1번+더걸유리.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/cho0303_조석현_c언어+레벨+2+도전과제+1+조석현 (1).zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/dxkim08_김도현_C언어_레벨2_도전과제1_김도현.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/gmltjd1224_양희성_C언어+레벨2_도전과제1.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/ujkk369000_이현우_C언어%2B레벨2_도전과제1.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input - test/wbc105_류진영_C언어%2B레벨2_도전과제1_류진영.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/cho0303_조석현.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/dxkim08_김도현_C언어_레벨2_도전과제1_김도현.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/gmltjd1224_양희성_C언어+레벨2_도전과제1.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/ujkk369000_이현우_C언어%2B레벨2_도전과제1.hwp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/DarkLuna.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/barrydugger746.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/cho0303.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/dxkim08.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/gmltjd1224.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/ujkk369000.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/file/output/wbc105.c" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/input/barrydugger746_더걸유리.hwp" afterPath="$PROJECT_DIR$/file/input/barrydugger746_더걸유리.hwp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file/input/barrydugger746_더걸유리.hwp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Constant.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Constant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Main.class" afterPath="$PROJECT_DIR$/out/production/AutoGrader/kr/co/flywing/app/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" afterPath="$PROJECT_DIR$/src/kr/co/flywing/app/Main.java" />
     </list>
     <ignored path="AutoGrade.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,8 +93,8 @@
       <file leaf-file-name="Constant.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2058823">
-              <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.6512605">
+              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4073#4074#0" expanded="true" />
@@ -684,7 +665,7 @@
       <workItem from="1476441009627" duration="57000" />
       <workItem from="1476552412357" duration="730000" />
       <workItem from="1476758530259" duration="120000" />
-      <workItem from="1477461999126" duration="5819000" />
+      <workItem from="1477461999126" duration="5862000" />
     </task>
     <task id="LOCAL-00001" summary="pull">
       <created>1474029892258</created>
@@ -740,11 +721,17 @@
       <option name="project" value="LOCAL" />
       <updated>1476082817904</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="GA260, Modulization">
+      <created>1477469648147</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1477469648147</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84147000" />
+    <option name="totallyTimeSpent" value="84190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,7 +793,8 @@
     <MESSAGE value="G9251 Excel Report" />
     <MESSAGE value="G9252 StrRep" />
     <MESSAGE value="GAA2 UTF-8, Report modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="GAA2 UTF-8, Report modified" />
+    <MESSAGE value="GA260, Modulization" />
+    <option name="LAST_COMMIT_MESSAGE" value="GA260, Modulization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1290,8 +1278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/co/flywing/app/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2058823">
-          <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.6512605">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4073#4074#0" expanded="true" />
