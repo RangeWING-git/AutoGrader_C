@@ -11,8 +11,8 @@ import java.util.Set;
  * Created by RangeWING on 2016-09-14.
  */
 public class Constant {
-    public static final String VERSION = "Indev 0.5.1";
-    public static final String BUILD = "GAA2";
+    public static final String VERSION = "Indev 0.6";
+    public static final String BUILD = "GA260";
 
     public static final String OS = "OS";
     public static final String OS_WIN = "win";
@@ -27,6 +27,13 @@ public class Constant {
     public static final String PATH_REPORT = "PATH_REPORT";
     public static final String PATH_VC = "PATH_VC";
     public static final String ROOT_DIR = "ROOT_DIR";
+
+    public static final int MODE_TOTAL = 0xAF;
+    public static final int MODE_PART_BASE = 0xA0;
+    public static final int MODE_PART_READ_HWP = 0xA1;
+    public static final int MODE_PART_COMPILE = 0xA2;
+    public static final int MODE_PART_GRADE = 0xA4;
+    public static final int MODE_PART_REPORT = 0xA8;
 
     private static final String SETTING_FILE = "./settings.inf";
     private static HashMap<String, String> map = new HashMap<>();
@@ -98,6 +105,10 @@ public class Constant {
 
     public static boolean isEqual(String key, String str){
         return map.get(key).equals(str);
+    }
+
+    public static boolean isKeyInBit(int bits, int key){
+        return (bits | key) == key;
     }
 
     public static class NotSupportedOSException extends Exception{
