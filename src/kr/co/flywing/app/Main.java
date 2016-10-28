@@ -20,6 +20,7 @@ public class Main {
         }
 
         int mode = Constant.MODE_PART_BASE;
+        boolean gradeContain = false;
 
         if(args.length < 1){
             System.out.print("ARGS: ");
@@ -41,6 +42,11 @@ public class Main {
                 mode |= Constant.MODE_PART_GRADE;
             } else if (a.equals("report")) {
                 mode |= Constant.MODE_PART_REPORT;
+            } else if (a.equals("unzip_project")) {
+                System.out.println("Start unzipping project");
+                (new FileHandler()).unzip_project(Constant.getPathAsFile(Constant.PATH_INPUT), Constant.getPathAsFile(Constant.PATH_OUTPUT));
+            } else if (a.equals("contain")) {
+                Constant.putSetting(Constant.GRADE_CONTAIN, "TRUE");
             }
         }
 

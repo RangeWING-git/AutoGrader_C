@@ -20,7 +20,7 @@ public class AutoGrader {
     Map<String, Document> docMap;
     CGrader grader;
 
-    public AutoGrader(int mode){
+    public AutoGrader(int mode) {
         this.mode = mode;
     }
 
@@ -36,29 +36,32 @@ public class AutoGrader {
     }
 
     public int compile() {
-        if(grader == null) grader = new CGrader();
+        if (grader == null) grader = new CGrader();
         File[] codes = outputPath.listFiles();
         if (codes == null) {
             System.out.println("There is no C file");
             return -1;
         }
-        if(docMap == null) initDocMap();
+        if (docMap == null) initDocMap();
+
+
+        for(File ef : execPath.listFiles()) ef.delete();
 
         int count = 0;
         try {
             grader.loadTestCases(testcasePath);
-            for(File code : codes){
+            for (File code : codes) {
                 boolean r = (mode == Constant.MODE_TOTAL) ? compile_sub_total(code) : compile_sub_part(code);
-                if(r) count++;
+                if (r) count++;
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return count;
     }
 
-    private boolean compile_sub_total(File code){
+    private boolean compile_sub_total(File code) {
         String fileName = code.getName();
         System.out.print("Compile: " + code.getAbsolutePath());
         try {
@@ -76,10 +79,11 @@ public class AutoGrader {
                 System.err.println("cannot find info of " + id);
                 Document newDoc = new Document();
                 newDoc.id = id;
+                newDoc.code = FileHandler.readFile(code);
                 newDoc.msg = r;
                 docMap.put(id, newDoc);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -87,10 +91,10 @@ public class AutoGrader {
 
     }
 
-    private boolean compile_sub_part(File code){
+    private boolean compile_sub_part(File code) {
         String fileName = code.getName();
         System.out.print("Compile: " + code.getAbsolutePath());
-        try{
+        try {
             String r = grader.compile(code, execPath);
             if (new File(execPath, fileName.replaceAll(".c", ".exe")).exists())
                 System.out.println(" [Done]");
@@ -101,9 +105,10 @@ public class AutoGrader {
             String id = fileName.substring(0, fileName.lastIndexOf('.'));
             Document newDoc = new Document();
             newDoc.id = id;
+            newDoc.code = FileHandler.readFile(code);
             newDoc.msg = r;
             docMap.put(id, newDoc);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -158,8 +163,8 @@ public class AutoGrader {
         try {
             if (!report.createNewFile()) System.out.println("Failed to create report");
             reportManager.writeToFile(report);
-            System.out.println("Failed to create the report");
         }catch(IOException e){
+            System.out.println("Failed to create the report");
             return false;
         }
         System.out.println("Report Created");

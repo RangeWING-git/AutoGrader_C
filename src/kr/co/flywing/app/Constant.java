@@ -11,8 +11,8 @@ import java.util.Set;
  * Created by RangeWING on 2016-09-14.
  */
 public class Constant {
-    public static final String VERSION = "Indev 0.6";
-    public static final String BUILD = "GA260";
+    public static final String VERSION = "Indev 0.7.1";
+    public static final String BUILD = "GA281";
 
     public static final String OS = "OS";
     public static final String OS_WIN = "win";
@@ -27,6 +27,16 @@ public class Constant {
     public static final String PATH_REPORT = "PATH_REPORT";
     public static final String PATH_VC = "PATH_VC";
     public static final String ROOT_DIR = "ROOT_DIR";
+
+    public static final String SCORE_TOTAL = "SCORE_TOTAL";
+    public static final String SCORE_EXEC = "SCORE_EXEC";
+    public static final String SCORE_EXEC_EACH = "SCORE_EXEC_EACH";
+    public static final String SCORE_EXEC_N = "SCORE_EXEC_N";
+    public static final String SCORE_EXEC_BONUS = "SCORE_EXEC_BONUS";
+    public static final String SCORE_DESC = "SCORE_DESC";
+    public static final String SCORE_STYLE = "SCORE_STYLE";
+
+    public static final String GRADE_CONTAIN = "GRADE_CONTAIN";
 
     public static final int MODE_TOTAL = 0xAF;
     public static final int MODE_PART_BASE = 0xA0;
@@ -57,6 +67,10 @@ public class Constant {
         }
         getSettings();
         printSettings();
+    }
+
+    public static void putSetting(String key, String value){
+        map.put(key, value);
     }
 
     protected static void getSettings() throws IOException{
@@ -95,6 +109,16 @@ public class Constant {
         return map.get(key);
     }
 
+    public static int getInt(String key){
+        int i;
+        try{
+            i = Integer.parseInt(get(key));
+        }catch(NumberFormatException e){
+            return -1;
+        }
+        return i;
+    }
+
     private static void printSettings(){
         System.out.println("Settings: ");
         Set<Map.Entry<String, String>> set = map.entrySet();
@@ -108,7 +132,7 @@ public class Constant {
     }
 
     public static boolean isKeyInBit(int bits, int key){
-        return (bits | key) == key;
+        return (bits & key) == key;
     }
 
     public static class NotSupportedOSException extends Exception{

@@ -1,4 +1,4 @@
-# AutoGrader Setting File (G9251)
+# AutoGrader Setting File (GA270)
 # Author: RangeWING
 
 # [Path Settings]
@@ -12,3 +12,11 @@ PATH_TESTCASE = ./file/testcase
 PATH_VC = C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC
 ROOT_DIR = C:/Users/range/IdeaProjects/AutoGrader
 PATH_REPORT = ./file/report
+
+SCORE_TOTAL = 40
+SCORE_EXEC = 25
+SCORE_EXEC_EACH = 5
+SCORE_EXEC_N = 5
+SCORE_EXEC_BONUS = 0
+SCORE_DESC = 10
+SCORE_STYLE = 5

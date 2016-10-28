@@ -13,7 +13,7 @@ public class CGrader {
     static final String linuxcmd_compile = "gcc \"%s\" -o \"%s\"";
     static final String linuxcmd_run = "\"%s\" < \"%s\"";
 
-    static final String wincmd_compile = "\"%s/bin/cl.exe\" \"%s\" /Fo\"%s\" /Fe\"%s\"";
+    static final String wincmd_compile = "\"%s/bin/cl.exe\" \"%s\" /Fe\"%s\"";
     static final String wincmd_preset = "\"%s/vcvarsall.bat\"";
     static final String wincmd_run = "\"%s\" < \"%s\"";
 
@@ -72,11 +72,11 @@ public class CGrader {
     public String compile(File file, File execPath) throws Exception{
         String cmd;
         String fileName = file.getName();
-        File execFile = new File(execPath, fileName.substring(0, fileName.lastIndexOf('.')));
+        File execFile = new File(execPath, fileName.substring(0, fileName.lastIndexOf('.'))+".exe");
         if(Constant.isEqual(Constant.COMPILER, Constant.COMPILER_GCC)){
             cmd = String.format(linuxcmd_compile, file.getAbsolutePath(), execFile.getAbsolutePath());
         }else{
-            cmd = String.format(wincmd_compile, Constant.get(Constant.PATH_VC), file.getAbsolutePath(), execFile.getAbsolutePath(), execFile.getAbsolutePath());
+            cmd = String.format(wincmd_compile, Constant.get(Constant.PATH_VC), file.getAbsolutePath(), execFile.getAbsolutePath());
         }
 
         Process proc = Runtime.getRuntime().exec(cmd);
@@ -112,15 +112,29 @@ public class CGrader {
             System.out.println(result);
             if(outputList != null) outputList.add(result);
             boolean right = true;
-            String[] outputs = result.split("\n");
-            if (outputs.length == tcf.output.length){
-                for(int i=0; i<outputs.length; i++){
-                    if(!outputs[i].trim().equals(tcf.output[i])) {
-                        right = false;
-                        break;
-                    }
+            String[] outputs = result.split(" |\n");
+
+            String gradeSetting = Constant.get(Constant.GRADE_CONTAIN);
+
+            if(gradeSetting != null && gradeSetting.toLowerCase().equals("true")) {
+                //contain setting
+                int i=0, j=0;
+                while(i < outputs.length && j < tcf.output.length) {
+                    if(outputs[i].trim().equals(tcf.output[j])) j++;
+                    else i++;
                 }
-            }else right = false;
+
+                right = (j == tcf.output.length);
+            }else{
+                if (outputs.length == tcf.output.length) {
+                    for (int i = 0; i < outputs.length; i++) {
+                        if (!outputs[i].trim().equals(tcf.output[i])) {
+                            right = false;
+                            break;
+                        }
+                    }
+                } else right = false;
+            }
             results[k++] = right;
             System.out.println(right);
         }
@@ -175,10 +189,10 @@ public class CGrader {
         boolean all = true;
         double score = 0;
         for(boolean s : scores){
-            if(s) score += 10;
+            if(s) score += Constant.getInt("SCORE_EXEC_EACH");
             else all = false;
         }
-        if(all) score += 5;
+        if(all) score += Constant.getInt("SCORE_EXEC_BONUS");
         return score;
     }
 

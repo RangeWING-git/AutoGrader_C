@@ -29,6 +29,11 @@ public class ReportManager {
     };
     protected static final String[] COLS = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
+    private final int EXEC_N = Constant.getInt(Constant.SCORE_EXEC_N);
+    private final int SCORE_EXEC = Constant.getInt(Constant.SCORE_EXEC);
+    private final int SCORE_DESC = Constant.getInt(Constant.SCORE_DESC);
+    private final int SCORE_STYLE = Constant.getInt(Constant.SCORE_STYLE);
+
     public ReportManager(){
         workbook = new XSSFWorkbook(XSSFWorkbookType.XLSX);
         sheet = workbook.createSheet("sheet1");
@@ -64,9 +69,9 @@ public class ReportManager {
         int c = 0;
         String scoreFormula1 = "SUM(E%d, F%d, F%d) - E%d * E%d * 0.01";
         String scoreFormula2 = "(%s)-(%s)*C%d*0.01";
-        String evalFormula = "\"실행 결과: \"&(E%d-E%d*E%d*0.01)&\"/75점 (%d/7개 성공)\n" +
-                "설명 점수: \"&F%d&\"/15점 \"&IF(F%d<15, \"(설명 부족)\", \"\")&\"\n" +
-                "코드 스타일 점수: \"&F%d&\"/10점 \"&IF(F%d<10, \"(주석 부족)\", \"\")";
+        String evalFormula = "\"실행 결과: \"&(E%d-E%d*E%d*0.01)&\"/" + SCORE_EXEC  + "점 (%d/" + EXEC_N + "개 성공)\n" +
+                "설명 점수: \"&F%d&\"/" + SCORE_DESC + "점 \"&IF(F%d<" + SCORE_DESC + ", \"(설명 부족)\", \"\")&\"\n" +
+                "코드 스타일 점수: \"&F%d&\"/" + SCORE_STYLE + "점 \"&IF(F%d<" + SCORE_STYLE + ", \"(주석 부족)\", \"\")";
 
         Object data[][] = {
                 {n++, id, scoreFormula2, evalFormula, (int)score, "", desc, code},
@@ -75,14 +80,20 @@ public class ReportManager {
         //first row
         row = sheet.createRow(r++);
 
+        int execOK = 0;
+        if(scores != null)
+            for(boolean bs : scores)
+                if(bs) execOK++;
+
         String sum = String.format(scoreFormula1, r, r, r+1, r, r+1);
         data[0][2] = String.format(scoreFormula2, sum, sum, r+1);
-        data[0][3] = String.format(evalFormula, r, r, r+1, (int)score/10, r, r, r+1, r+1);
+        data[0][3] = String.format(evalFormula, r, r, r+1, execOK, r, r, r+1, r+1);
 
 
         for(Object d : data[0]) {
             cell = row.createCell(c++);
-            if(d.toString().matches("^-?\\d+$")) cell.setCellValue((int)d);
+            if(d == null) continue;
+            else if(d.toString().matches("^-?\\d+$")) cell.setCellValue((int)d);
             else if(c == 3 || c == 4) cell.setCellFormula(d.toString());
             else cell.setCellValue(d.toString());
         }
